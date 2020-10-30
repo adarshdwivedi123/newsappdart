@@ -3,6 +3,8 @@ import 'package:clima/services/location.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:clima/services/networking.dart';
+import 'location_screen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 const apiKey ='27e3262bd16de1188a49231ce14c863a';
 class LoadingScreen extends StatefulWidget {
   @override
@@ -29,7 +31,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
     // print(temp);
     // print(condition);
     // print(cityname);
+Navigator.push(context,MaterialPageRoute(builder: (context)
+{
 
+return  LocationScreen();
+
+}));
 
 }
   @override
@@ -45,6 +52,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
       //     child: Text('Get Location'),
       //   ),
       // ),
+      body:Center
+        (
+          child:SpinKitRotatingCircle(
+            color: Colors.white,
+            size: 100.0,
+          ),
+
+      ),
 
     );
   }
